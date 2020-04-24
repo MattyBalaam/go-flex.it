@@ -1,13 +1,13 @@
 <script>
   export let mixTitle;
   export let mixUrl;
+  export let imageUrl;
 
   //   console.log("image");
 </script>
 
 <style>
   main {
-    background: url("images/wish.jpg");
     background-size: cover;
     background-position: center;
     /* backdrop-filter: blur(4); */
@@ -41,12 +41,12 @@
   }
 </style>
 
-<main>
+<main style="background-image: {imageUrl}">
   <div class="header-holder">
     <h1>{mixTitle}</h1>
   </div>
 
-  <!-- <audio src={mixUrl} controls /> -->
+  <audio src={mixUrl} controls />
   <p>
     <a href={mixUrl}>Download this podcast</a>
   </p>

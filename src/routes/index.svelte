@@ -12,4 +12,5 @@
 
 <Podcast
   mixTitle="The Flex podcast 1"
-  mixUrl="http://www.hochmuth.com/mp3/Tchaikovsky_Rococo_Var_orch.mp3" />
+  mixUrl="audio/flex-volume-1.opus"
+  imageUrl="images/wish.jpg" />
