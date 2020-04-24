@@ -2,11 +2,13 @@
   export let mixTitle;
   export let mixUrl;
   export let imageUrl;
-
-  //   console.log("image");
 </script>
 
 <style>
+  :root {
+    --maxWidth: 900px;
+  }
+
   main {
     background-size: cover;
     background-position: center;
@@ -20,7 +22,7 @@
   }
 
   audio {
-    max-width: 400px;
+    max-width: var(--maxWidth);
     width: 100%;
   }
 
@@ -41,7 +43,7 @@
   }
 </style>
 
-<main style="background-image: {imageUrl}">
+<main style="background-image: url({imageUrl})">
   <div class="header-holder">
     <h1>{mixTitle}</h1>
   </div>
