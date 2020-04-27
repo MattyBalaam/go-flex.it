@@ -12,5 +12,5 @@
 
 <Podcast
   mixTitle="The Flex podcast 1"
-  mixUrl="audio/flex-volume-1.opus"
+  mixUrls={{ opus: 'audio/flex-volume-1.opus', mp3: 'audio/flex-volume-1.opus' }}
   imageUrl="images/wish.jpg" />
