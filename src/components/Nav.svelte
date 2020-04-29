@@ -4,28 +4,30 @@
 
 <style>
   nav {
-    border-bottom: 1px solid rgba(255, 62, 0, 0.1);
-    font-weight: 300;
-    padding: 0 1em;
+    background: var(--colour-sunshine-50);
+    margin: auto;
+    font-size: 20px;
+    font-family: var(--font-display);
+    padding: 1em;
+    height: var(--header-height);
   }
 
   ul {
     margin: 0;
     padding: 0;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    list-style: none;
   }
 
-  li {
-    display: block;
-    float: left;
-  }
-
-  [aria-current] {
+  /* [aria-current] {
     position: relative;
     display: inline-block;
-  }
+  } */
 
-  [aria-current]::after {
+  /* [aria-current]::after {
     position: absolute;
     content: "";
     width: calc(100% - 1em);
@@ -33,12 +35,12 @@
     background-color: rgb(255, 62, 0);
     display: block;
     bottom: -1px;
-  }
+  } */
 
   a {
     text-decoration: none;
-    padding: 1em 0.5em;
-    display: block;
+    /* padding: 1em 0.5em; */
+    /* display: block; */
   }
 </style>
 
@@ -46,17 +48,26 @@
   <ul>
     <li>
       <a aria-current={segment === undefined ? 'page' : undefined} href=".">
-        home
+        <img src="images/the-flex-logo.png" alt="The Flex" height="50" />
+
       </a>
     </li>
-    <li>
+    <!-- <li>
       <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         about
       </a>
-    </li>
+    </li> -->
 
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <!-- <li><a rel=prefetch aria-current='{segment === "blog" ? "page" : undefined}' href='blog'>blog</a></li> -->
+    <!-- <li>
+      <a
+        rel="prefetch"
+        aria-current={segment === 'blog' ? 'page' : undefined}
+        href="podcasts">
+        podcasts
+      </a>
+    </li> -->
+
   </ul>
 </nav>

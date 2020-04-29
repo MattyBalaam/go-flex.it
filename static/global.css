@@ -1,5 +1,25 @@
 :root {
-  --colour-sunshine: #eaf400;
+  --colour-sunshine: rgb(91.8%, 95.7%, 0%);
+  --colour-sunshine-50: rgba(91.8%, 95.7%, 0%, 0.5);
+  --colour-millennial-prince: rgb(186, 156, 196);
+  --colour-millennial-prince-50: rgba(186, 156, 196, 0.5);
+  --colour-millennial-prince-75: rgba(186, 156, 196, 0.75);
+  --color-tango: rgb(247, 147, 30);
+
+  --z-index-top: 10;
+  --z-index-portal: 11;
+
+  --header-height: 80px;
+
+  --font-display: PonyMaker;
+
+  --font-display-size-small: 22px;
+  --font-display-size-baseline: 30px;
+  --font-display-size-large: 80px;
+
+  --gap-small: 10px;
+  --gap-baseline: 20px;
+  --gap-large: 40px;
 }
 
 html {
@@ -19,7 +39,7 @@ body {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: PonyMaker;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
 }
 
 *,
@@ -86,5 +106,5 @@ button:focus {
 
 @font-face {
   font-family: PonyMaker;
-  src: url("fonts/PonyMaker.ttf");
+  src: url("fonts/PonyMaker.woff");
 }

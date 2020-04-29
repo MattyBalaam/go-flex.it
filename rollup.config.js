@@ -8,9 +8,21 @@ import svg from "rollup-plugin-svg-import";
 import config from "sapper/config/rollup.js";
 import pkg from "./package.json";
 
+import { createEnv, preprocess, readConfigFile } from "svelte-ts-preprocess";
+import typescript from "rollup-plugin-typescript2";
+
 const mode = process.env.NODE_ENV;
 const dev = mode === "development";
 const legacy = !!process.env.SAPPER_LEGACY_BUILD;
+const env = createEnv();
+const compilerOptions = readConfigFile(env);
+const opts = {
+  env,
+  compilerOptions: {
+    ...compilerOptions,
+    allowNonTsExtensions: true,
+  },
+};
 
 const onwarn = (warning, onwarn) =>
   (warning.code === "CIRCULAR_DEPENDENCY" &&
@@ -31,6 +43,7 @@ export default {
         dev,
         hydratable: true,
         emitCss: true,
+        preprocess: preprocess(opts),
       }),
 
       resolve({
@@ -38,7 +51,7 @@ export default {
         dedupe: ["svelte"],
       }),
       commonjs(),
-
+      typescript(),
       legacy &&
         babel({
           extensions: [".js", ".mjs", ".html", ".svelte"],
@@ -73,7 +86,9 @@ export default {
   },
 
   server: {
+    // input: config.server.input().server.replace(/\.js$/, ".ts"),
     input: config.server.input(),
+
     output: config.server.output(),
     plugins: [
       replace({
@@ -84,11 +99,13 @@ export default {
       svelte({
         generate: "ssr",
         dev,
+        preprocess: preprocess(dev),
       }),
       resolve({
         dedupe: ["svelte"],
       }),
       commonjs(),
+      typescript(),
     ],
     external: Object.keys(pkg.dependencies).concat(
       require("module").builtinModules ||

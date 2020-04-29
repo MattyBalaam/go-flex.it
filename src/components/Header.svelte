@@ -1,16 +1,20 @@
 <script>
-  import FlexLogo from "../images/the-flex-logo.svg";
+  import Nav from "../components/Nav.svelte";
+
+  let segment;
 </script>
 
 <style>
-  figure {
+  header {
     position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: var(--z-index-top);
   }
 </style>
 
 <header>
-  <figure>
-    {@html FlexLogo}
-  </figure>
+
+  <Nav {segment} />
 
 </header>

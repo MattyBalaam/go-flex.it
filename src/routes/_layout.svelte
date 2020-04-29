@@ -5,8 +5,6 @@
   export let segment;
 </script>
 
-<!-- <Header />
-
-<Nav {segment} /> -->
+<Header {segment} />
 
 <slot />
