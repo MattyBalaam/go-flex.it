@@ -1,12 +1,6 @@
-<script context="module">
-  export const SEEKING = {
-    forward: "forward",
-    back: "back",
-    idle: "idle",
-  };
-</script>
-
 <script>
+  import { SEEKING } from "./Audio.svelte";
+
   export let paused;
   export let handlePlayToggle;
   export let handleSeek;

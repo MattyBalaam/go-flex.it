@@ -1,5 +1,7 @@
 <script>
+  import { onMount, getContext, setContext } from "svelte";
   import Podcast from "../components/Podcast/Podcast.svelte";
+
   const DJS = {
     HP: "H.P. Sorcery",
     FB: "Femme Bison",

@@ -17,6 +17,7 @@
   --font-display-size-baseline: 30px;
   --font-display-size-large: 80px;
 
+  --gap-xsmall: 5px;
   --gap-small: 10px;
   --gap-baseline: 20px;
   --gap-large: 40px;
@@ -107,4 +108,14 @@ button:focus {
 @font-face {
   font-family: PonyMaker;
   src: url("fonts/PonyMaker.woff");
+}
+
+@font-face {
+  font-family: Merkur;
+  src: url("fonts/Merkur-j147.otf");
+}
+
+@font-face {
+  font-family: DigitalDust;
+  src: url("fonts/DigitalDust-rKap.woff");
 }

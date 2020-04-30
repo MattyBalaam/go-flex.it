@@ -4,10 +4,9 @@
 
 <style>
   nav {
-    background: var(--colour-sunshine-50);
     margin: auto;
     font-size: 20px;
-    font-family: var(--font-display);
+    font-family: va(--font-display);
     padding: 1em;
     height: var(--header-height);
   }
@@ -52,22 +51,22 @@
 
       </a>
     </li>
-    <!-- <li>
+    <li>
       <a aria-current={segment === 'about' ? 'page' : undefined} href="about">
         about
       </a>
-    </li> -->
+    </li>
 
     <!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
 		     the blog data when we hover over the link or tap it on a touchscreen -->
-    <!-- <li>
+    <li>
       <a
         rel="prefetch"
         aria-current={segment === 'blog' ? 'page' : undefined}
         href="podcasts">
         podcasts
       </a>
-    </li> -->
+    </li>
 
   </ul>
 </nav>
